@@ -11,7 +11,7 @@ import { StyleSheet, Text, View } from 'react-native';
 // }
 const Cat = () => {
   const owner = 'Amhar';
-  const name = 'Beeti';
+  const name = 'BT';
   return (
     <View style={styles.container}>
       <Text>Hello {owner}, I am your {name}!</Text>

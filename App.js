@@ -10,9 +10,11 @@ import { StyleSheet, Text, View } from 'react-native';
 //   );
 // }
 const Cat = () => {
+  const owner = 'Amhar';
+  const name = 'Beeti';
   return (
     <View style={styles.container}>
-      <Text>Hello, I am your cat!</Text>
+      <Text>Hello {owner}, I am your {name}!</Text>
     </View>
   );
 };

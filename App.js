@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { TextInput } from 'react-native-web';
 
 // export default function App() {
 //   return (
@@ -11,10 +12,18 @@ import { StyleSheet, Text, View } from 'react-native';
 // }
 const Cat = () => {
   const owner = 'Amhar';
-  const name = 'BT';
+  const cat = 'BT';
   return (
     <View style={styles.container}>
-      <Text>Hello {owner}, I am your {name}!</Text>
+      <Text>Enter the owners name? </Text>
+      <TextInput style={styles.textInput}
+        defaultValue={owner}
+      />
+      <Text>Enter the Cat name? </Text>
+      <TextInput style={styles.textInput}
+        defaultValue={cat}
+      />
+      <Text>Hello {owner}, I am your {cat}!</Text>
     </View>
   );
 };
@@ -27,5 +36,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  textInput:{
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    padding: 5,
+    borderRadius: 10,
   },
 });

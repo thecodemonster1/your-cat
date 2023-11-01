@@ -28,7 +28,16 @@ const Cat = () => {
   );
 };
 
-export default Cat;
+const Cafe = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Welcome to our cafe!</Text>
+      <Cat />
+    </View>
+  );
+};
+
+export default Cafe;
 
 const styles = StyleSheet.create({
   container: {

@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput } from 'react-native-web';
 
+// =================================
+
 // export default function App() {
 //   return (
 //     <View style={styles.container}>
@@ -10,20 +12,39 @@ import { TextInput } from 'react-native-web';
 //     </View>
 //   );
 // }
-const Cat = () => {
-  const owner = 'Amhar';
-  const cat = 'BT';
+
+// =================================
+
+// type CatProps = {
+//   cat: string;
+//   owner: string;
+// };
+
+// const Cat = (props: CatProps) => {
+//   // const owner = 'Amhar';
+//   // const cat = 'BT';
+//   return (
+//     <View style={styles.container}>
+//       {/* <Text>Enter the owners name? </Text>
+//       <TextInput style={styles.textInput}
+//         defaultValue={owner}
+//       />
+//       <Text>Enter the Cat name? </Text>
+//       <TextInput style={styles.textInput}
+//         defaultValue={cat}
+//       /> */}
+//       <Text>Hello {props.owner}, I am your {props.cat}!</Text>
+//     </View>
+//   );
+// };
+
+// =====================================
+
+const Cat = (props) => {
   return (
     <View style={styles.container}>
-      <Text>Enter the owners name? </Text>
-      <TextInput style={styles.textInput}
-        defaultValue={owner}
-      />
-      <Text>Enter the Cat name? </Text>
-      <TextInput style={styles.textInput}
-        defaultValue={cat}
-      />
-      <Text>Hello {owner}, I am your {cat}!</Text>
+      <Text>Hello {props.owner}, I am your {props.cat}!</Text>
+      <StatusBar style="auto" />
     </View>
   );
 };
@@ -32,7 +53,9 @@ const Cafe = () => {
   return (
     <View style={styles.container}>
       <Text>Welcome to our cafe!</Text>
-      <Cat />
+      <Cat cat="Kitty" owner="Amhar" />
+      <Cat cat="Miskey" owner="Ihlaas"/>
+      <Cat cat="Pixey" owner="Faizal Mama"/>
     </View>
   );
 };

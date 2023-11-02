@@ -40,27 +40,47 @@ import { TextInput } from 'react-native-web';
 
 // =====================================
 
-const Cat = (props) => {
+// const Cat = (props) => {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Hello {props.owner}, I am your {props.cat}!</Text>
+//       <StatusBar style="auto" />
+//     </View>
+//   );
+// };
+
+// =====================================
+
+const Cat = () => {
   return (
     <View style={styles.container}>
-      <Text>Hello {props.owner}, I am your {props.cat}!</Text>
-      <StatusBar style="auto" />
+      <Image
+        source={{
+          uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
+        }}
+        style={{width: 200, height: 200}}
+      />
+      <Text>Hello, I am your cat!</Text>
     </View>
   );
 };
 
-const Cafe = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Welcome to our cafe!</Text>
-      <Cat cat="Kitty" owner="Amhar" />
-      <Cat cat="Miskey" owner="Ihlaas"/>
-      <Cat cat="Pixey" owner="Faizal Mama"/>
-    </View>
-  );
-};
+// ===================================
+
+// const Cafe = () => {
+//   return (
+//     <View style={styles.container}>
+//       <Text>Welcome to our cafe!</Text>
+//       <Cat cat="Kitty" owner="Amhar" />
+//       <Cat cat="Miskey" owner="Ihlaas"/>
+//       <Cat cat="Pixey" owner="Faizal Mama"/>
+//     </View>
+//   );
+// };
 
 export default Cafe;
+
+// ===================================
 
 const styles = StyleSheet.create({
   container: {

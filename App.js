@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput } from 'react-native-web';
@@ -15,28 +16,38 @@ import { TextInput } from 'react-native-web';
 
 // =================================
 
-// type CatProps = {
-//   cat: string;
-//   owner: string;
-// };
+type CatProps = {
+  cat: string;
+  owner: string;
+};
 
-// const Cat = (props: CatProps) => {
-//   // const owner = 'Amhar';
-//   // const cat = 'BT';
-//   return (
-//     <View style={styles.container}>
-//       {/* <Text>Enter the owners name? </Text>
-//       <TextInput style={styles.textInput}
-//         defaultValue={owner}
-//       />
-//       <Text>Enter the Cat name? </Text>
-//       <TextInput style={styles.textInput}
-//         defaultValue={cat}
-//       /> */}
-//       <Text>Hello {props.owner}, I am your {props.cat}!</Text>
-//     </View>
-//   );
-// };
+// =================================
+
+const Cat = (props: CatProps) => {
+  const [isHungry, setIsHungry] = useState(true);
+  // const owner = 'Amhar';
+  // const cat = 'BT';
+  return (
+    <View style={styles.container}>
+      {/* <Text>Enter the owners name? </Text>
+      <TextInput style={styles.textInput}
+        defaultValue={owner}
+      />
+      <Text>Enter the Cat name? </Text>
+      <TextInput style={styles.textInput}
+        defaultValue={cat}
+      /> */}
+      <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text>
+      <Button 
+        onPress={() => {
+          setIsHungry(false);
+        }}
+        desable={!isHungry}
+        title={isHungry ? 'Pour me some milk, please!' : 'Thank You'}
+      />
+    </View>
+  );
+};
 
 // =====================================
 
@@ -51,19 +62,19 @@ import { TextInput } from 'react-native-web';
 
 // =====================================
 
-const Cat = () => {
-  return (
-    <View style={styles.container}>
-      <Image
-        source={{
-          uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
-        }}
-        style={{width: 200, height: 200}}
-      />
-      <Text>Hello, I am your cat!</Text>
-    </View>
-  );
-};
+// const Cat = () => {
+//   return (
+//     <View>
+//       <Image
+//         source={{
+//           uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
+//         }}
+//         style={{width: 200, height: 200}}
+//       />
+//       <Text>Hello, I am your cat!</Text>
+//     </View>
+//   );
+// };
 
 // ===================================
 
@@ -77,6 +88,18 @@ const Cat = () => {
 //     </View>
 //   );
 // };
+
+// ===================================
+
+const Cafe = () => {
+  return (
+    <>
+      <Cat cat="Kitty" owner="Amhar" />
+      <Cat cat="Miskey" owner="Ihlaas"/>
+      <Cat cat="Pixey" owner="Faizal Mama"/>
+    </>
+  );
+};
 
 export default Cafe;
 

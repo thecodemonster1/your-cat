@@ -38,12 +38,13 @@ const Cat = (props: CatProps) => {
         defaultValue={cat}
       /> */}
       <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text>
+      <Text></Text>
       <Button 
         onPress={() => {
           setIsHungry(false);
         }}
         disabled={!isHungry}
-        title={isHungry ? 'Pour me some milk, please!' : 'Thank You'}
+        title={isHungry ? 'Pour me some milk, please!' : 'Thank You '+props.owner }
       />
     </View>
   );

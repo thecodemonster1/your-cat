@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { TextInput } from 'react-native-web';
 
 // =================================
@@ -42,7 +42,7 @@ const Cat = (props: CatProps) => {
         onPress={() => {
           setIsHungry(false);
         }}
-        desable={!isHungry}
+        disabled={!isHungry}
         title={isHungry ? 'Pour me some milk, please!' : 'Thank You'}
       />
     </View>

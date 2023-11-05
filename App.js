@@ -25,8 +25,8 @@ type CatProps = {
 
 const Cat = (props: CatProps) => {
   const [isHungry, setIsHungry] = useState(true);
-  // const owner = 'Amhar';
-  // const cat = 'BT';
+  // let owner2 = 'Amhar';
+  // let cat2 = 'BT';
   return (
     <View style={styles.container}>
       {/* <Text>Enter the owners name? </Text>
@@ -37,6 +37,7 @@ const Cat = (props: CatProps) => {
       <TextInput style={styles.textInput}
         defaultValue={cat}
       /> */}
+      <Text>{`Hello ${owner}, I am your ${cat}! and I am {isHungry ? 'Hungry' : 'Full'}!`}</Text>
       <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text>
       <Text></Text>
       <Button 

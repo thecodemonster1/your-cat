@@ -16,17 +16,17 @@ import { TextInput } from 'react-native-web';
 
 // =================================
 
-type CatProps = {
-  cat: string;
-  owner: string;
-};
+// type CatProps = {
+//   cat: string;
+//   owner: string;
+// };
 
 // =================================
 
 const Cat = (props: CatProps) => {
   const [isHungry, setIsHungry] = useState(true);
-  // let owner2 = 'Amhar';
-  // let cat2 = 'BT';
+  let owner2 = 'Amhar';
+  let cat2 = 'BT';
   return (
     <View style={styles.container}>
       {/* <Text>Enter the owners name? </Text>
@@ -37,8 +37,8 @@ const Cat = (props: CatProps) => {
       <TextInput style={styles.textInput}
         defaultValue={cat}
       /> */}
-      <Text>{`Hello ${owner}, I am your ${cat}! and I am {isHungry ? 'Hungry' : 'Full'}!`}</Text>
-      <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text>
+      <Text>{`Hello ${owner2}, I am your ${cat2}! and I am ${isHungry ? 'Hungry' : 'Full'}!`}</Text>
+      {/* <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text> */}
       <Text></Text>
       <Button 
         onPress={() => {
@@ -93,17 +93,17 @@ const Cat = (props: CatProps) => {
 
 // ===================================
 
-const Cafe = () => {
-  return (
-    <>
-      <Cat cat="Kitty" owner="Amhar" />
-      <Cat cat="Miskey" owner="Ihlaas"/>
-      <Cat cat="Pixey" owner="Faizal Mama"/>
-    </>
-  );
-};
+// const Cafe = () => {
+//   return (
+//     <>
+//       <Cat cat="Kitty" owner="Amhar" />
+//       <Cat cat="Miskey" owner="Ihlaas"/>
+//       <Cat cat="Pixey" owner="Faizal Mama"/>
+//     </>
+//   );
+// };
 
-export default Cafe;
+export default Cat;
 
 // ===================================
 

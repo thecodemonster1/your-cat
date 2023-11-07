@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { TextInput } from 'react-native-web';
+import { StyleSheet, TextInput, Text, View, Button } from 'react-native';
 
 // =================================
 
@@ -23,33 +22,36 @@ import { TextInput } from 'react-native-web';
 
 // =================================
 
-const Cat = (props: CatProps) => {
-  const [isHungry, setIsHungry] = useState(true);
-  let owner2 = 'Amhar';
-  let cat2 = 'BT';
-  return (
-    <View style={styles.container}>
-      {/* <Text>Enter the owners name? </Text>
-      <TextInput style={styles.textInput}
-        defaultValue={owner}
-      />
-      <Text>Enter the Cat name? </Text>
-      <TextInput style={styles.textInput}
-        defaultValue={cat}
-      /> */}
-      <Text>{`Hello ${owner2}, I am your ${cat2}! and I am ${isHungry ? 'Hungry' : 'Full'}!`}</Text>
-      {/* <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text> */}
-      <Text></Text>
-      <Button 
-        onPress={() => {
-          setIsHungry(false);
-        }}
-        disabled={!isHungry}
-        title={isHungry ? 'Pour me some milk, please!' : 'Thank You '+props.owner }
-      />
-    </View>
-  );
-};
+// const Cat = () => {
+// // const Cat = (props: CatProps) => {
+//   const [isHungry, setIsHungry] = useState(true);
+//   let owner2 = 'Amhar';
+//   let cat2 = 'BT';
+//   return (
+//     <View style={styles.container}>
+//       {/* <Text>Enter the owners name? </Text>
+//       <TextInput style={styles.textInput}
+//         defaultValue={owner}
+//       />
+//       <Text>Enter the Cat name? </Text>
+//       <TextInput style={styles.textInput}
+//         defaultValue={cat}
+//       /> */}
+//       <Text>{`Hello ${owner2}, I am your ${cat2}! and I am ${isHungry ? 'Hungry' : 'Full'}!`}</Text>
+//       {/* <Text>Hello {props.owner}, I am your {props.cat}! and I am {isHungry ? 'Hungry' : 'Full'}!</Text> */}
+//       <Text></Text>
+//       <Button 
+//         onPress={() => {
+//           setIsHungry(false);
+//         }}
+//         disabled={!isHungry}
+//         title={isHungry ? 'Pour me some milk, please!' : `Thank You ${owner2}` }
+//       />
+//     </View>
+//   );
+// };
+
+// export default Cat;
 
 // =====================================
 
@@ -103,7 +105,31 @@ const Cat = (props: CatProps) => {
 //   );
 // };
 
-export default Cat;
+// export default Cafe;
+
+// ===================================
+
+const PizzaTranslator = () => {
+  const [text, setText] = useState('');
+  return(
+    <View>
+      <TextInput
+        style={{height: 40,}}
+        placeholder="Type Here"
+        onChangeText={newText => setText(newText)}
+        defaultValue={text}
+      />
+      <Text style={{padding: 10, fontSize: 42}}>
+        {text
+          .split(' ')
+          .map(word => word && '🍕')
+          .join(' ')}
+      </Text>
+    </View>
+  );
+};
+
+export default PizzaTranslator;
 
 // ===================================
 
